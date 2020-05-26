@@ -1,15 +1,13 @@
 import React from "react"
 import "./App.css"
+import { Shopping } from "./component/ShoppingList"
 
-type AppProps = { message: string }
-
-// const App = ({ message }: AppProps) => <div>{message}</div>
-// const App: React.FC<{ message: string }> = ({ message }) => <div>{message}</div>
-const App: React.FunctionComponent<{ title: string }> = ({
-    children,
-    title,
-}) => {
-    return <div title={title}>{title}</div>
+function App() {
+    return (
+        <div>
+            <Shopping />
+        </div>
+    )
 }
 
 export default App

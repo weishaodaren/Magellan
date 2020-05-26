@@ -1,0 +1,12 @@
+.shop-container {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.shop-container p {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
