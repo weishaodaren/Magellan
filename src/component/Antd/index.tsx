@@ -7,6 +7,9 @@ export const Antd: React.FC = () => {
             <Button type="primary">Button</Button>
             <Button type="dashed">Dashed</Button>
             <Button type="link">link</Button>
+            <Button type="primary" danger>
+                Danger
+            </Button>
         </div>
     )
 }
