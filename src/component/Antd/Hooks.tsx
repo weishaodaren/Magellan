@@ -1,8 +1,17 @@
-import React, { FC, memo, useMemo, useState, useReducer } from "react"
+import React, {
+    FC,
+    memo,
+    useMemo,
+    useState,
+    useReducer,
+    useContext,
+} from "react"
+import { StyleContext } from "./Context"
 import { Reducer } from "./UseReducer"
 import { Button } from "antd"
 
 export const Example = () => {
+    const { color } = useContext(StyleContext)
     const [time, setTime] = useState<number>(0)
     const [random, setRandom] = useState<number>(0)
 
@@ -13,7 +22,7 @@ export const Example = () => {
         setRandom(Math.random() * 100)
     }
     return (
-        <div>
+        <div style={{ color: color }}>
             <p>
                 time{time}random{random}
             </p>
