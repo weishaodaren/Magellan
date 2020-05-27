@@ -1,15 +1,5 @@
-import React, {
-    FC,
-    memo,
-    useMemo,
-    useEffect,
-    useCallback,
-    useRef,
-    useReducer,
-    useState,
-    useContext,
-    useLayoutEffect,
-} from "react"
+import React, { FC, memo, useMemo, useState, useReducer } from "react"
+import { Reducer } from "./UseReducer"
 import { Button } from "antd"
 
 export const Example = () => {
@@ -30,6 +20,7 @@ export const Example = () => {
             <Button onClick={handleClick2Time}>点击获取当前时间</Button>
             <Button onClick={handleClick2Random}>点击获取随机数</Button>
             <Show time={time}>{random}</Show>
+            <WithCounter initalCount={0} />
         </div>
     )
 }
@@ -48,9 +39,25 @@ const Show: FC<Data> = memo((props) => {
 
     return (
         <div>
-            {/* <p>Time is :{changeTime(props.time)}</p> */}
             <p>Time is :{newTime}</p>
             <p>Random is : {props.children}</p>
         </div>
     )
 })
+
+type InitalCount = { initalCount: number }
+const WithCounter: FC<InitalCount> = ({ initalCount = 0 }) => {
+    const [state, dispatch] = useReducer(Reducer, { count: initalCount })
+    return (
+        <div>
+            <p>Count: {state.count}</p>
+            <Button onClick={() => dispatch({ type: "RESET" })}>Reset</Button>
+            <Button onClick={() => dispatch({ type: "DECREMENT" })}>
+                Decrement
+            </Button>
+            <Button onClick={() => dispatch({ type: "INCREMENT" })}>
+                Increment
+            </Button>
+        </div>
+    )
+}
