@@ -11,7 +11,8 @@ import { Reducer } from "./UseReducer"
 import { Button } from "antd"
 
 export const Example = () => {
-    const { color } = useContext(StyleContext)
+    const { state, dispatch } = useContext(StyleContext)
+    // const color = state.state
     const [time, setTime] = useState<number>(0)
     const [random, setRandom] = useState<number>(0)
 
@@ -22,10 +23,25 @@ export const Example = () => {
         setRandom(Math.random() * 100)
     }
     return (
-        <div style={{ color: color }}>
+        <div style={{ color: state?.color }}>
             <p>
                 time{time}random{random}
+                当前字体颜色： {state?.color}
             </p>
+            <button
+                onClick={() =>
+                    dispatch!({ type: "UPDATE_COLOR", payload: "yellow" })
+                }
+            >
+                Yellow
+            </button>
+            <button
+                onClick={() =>
+                    dispatch!({ type: "UPDATE_COLOR", payload: "orange" })
+                }
+            >
+                Orange
+            </button>
             <Button onClick={handleClick2Time}>点击获取当前时间</Button>
             <Button onClick={handleClick2Random}>点击获取随机数</Button>
             <Show time={time}>{random}</Show>
