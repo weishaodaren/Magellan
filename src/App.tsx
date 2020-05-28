@@ -1,7 +1,6 @@
 import React, { useReducer } from "react"
-import "./App.css"
 import { StyleContext, ReducerWithContext } from "./component/Antd/Context"
-// import { Shopping } from "./component/ShoppingList"
+import { Shopping } from "./component/ShoppingList"
 import { Antd } from "./component/Antd"
 import { Example } from "./component/Antd/Hooks"
 
@@ -11,7 +10,7 @@ function App({ initalColor = "#1896ff" }) {
     })
     return (
         <StyleContext.Provider value={{ state, dispatch }}>
-            {/* <Antd inital={0} /> */}
+            <Antd inital={0} />
             <Example />
             <button
                 onClick={() =>
@@ -29,7 +28,7 @@ function App({ initalColor = "#1896ff" }) {
             >
                 Pink
             </button>
-            {/* <Shopping /> */}
+            <Shopping />
         </StyleContext.Provider>
     )
 }
