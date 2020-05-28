@@ -3,6 +3,7 @@ import { StyleContext, ReducerWithContext } from "./component/Antd/Context"
 import { Shopping } from "./component/ShoppingList"
 import { Antd } from "./component/Antd"
 import { Example } from "./component/Antd/Hooks"
+import { Button } from "antd"
 
 function App({ initalColor = "#1896ff" }) {
     const [state, dispatch] = useReducer(ReducerWithContext, {
@@ -12,14 +13,15 @@ function App({ initalColor = "#1896ff" }) {
         <StyleContext.Provider value={{ state, dispatch }}>
             <Antd inital={0} />
             <Example />
-            <button
+            <Button
+                type="primary"
                 onClick={() =>
                     dispatch &&
                     dispatch({ type: "UPDATE_COLOR", payload: "green" })
                 }
             >
                 Green
-            </button>
+            </Button>
             <button
                 onClick={() =>
                     dispatch &&

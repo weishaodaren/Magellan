@@ -2,6 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import "./index.css"
 import App from "./App"
+import "antd/dist/antd.css"
 import * as serviceWorker from "./serviceWorker"
 import {
     BrowserRouter as Router,
@@ -12,6 +13,9 @@ import {
     useHistory,
     useRouteMatch,
 } from "react-router-dom"
+import { RouterFC } from "./component/Router"
+import ParamsExample from "./component/Router/WithParams"
+import NestingParams from "./component/Router/NestPrams"
 
 const One = () => {
     const H = useHistory()
@@ -39,14 +43,16 @@ ReactDOM.render(
     <Router>
         <Switch>
             <Route
-                path="/home"
+                path="/"
                 render={({ match }) => {
                     console.log(match)
                     return <div>Before</div>
                 }}
             >
                 {/* <App initalColor="#1896ff" /> */}
-                {/* <One /> */}
+                {/* <RouterFC /> */}
+                {/* <ParamsExample /> */}
+                <NestingParams />
             </Route>
             <Route path="/con">
                 <One />
