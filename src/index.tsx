@@ -17,6 +17,7 @@ import { RouterFC } from "./component/Router"
 import ParamsExample from "./component/Router/WithParams"
 import NestingParams from "./component/Router/NestPrams"
 import AuthExample from "./component/Router/AuthRouter"
+import MemoFunc from "./component/Antd/Memo"
 
 const One = () => {
     const H = useHistory()
@@ -54,7 +55,8 @@ ReactDOM.render(
                 {/* <RouterFC /> */}
                 {/* <ParamsExample /> */}
                 {/* <NestingParams /> */}
-                <AuthExample />
+                {/* <AuthExample /> */}
+                <MemoFunc params={10} />
             </Route>
             <Route path="/con">
                 <One />
