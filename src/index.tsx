@@ -16,6 +16,7 @@ import {
 import { RouterFC } from "./component/Router"
 import ParamsExample from "./component/Router/WithParams"
 import NestingParams from "./component/Router/NestPrams"
+import AuthExample from "./component/Router/AuthRouter"
 
 const One = () => {
     const H = useHistory()
@@ -52,7 +53,8 @@ ReactDOM.render(
                 {/* <App initalColor="#1896ff" /> */}
                 {/* <RouterFC /> */}
                 {/* <ParamsExample /> */}
-                <NestingParams />
+                {/* <NestingParams /> */}
+                <AuthExample />
             </Route>
             <Route path="/con">
                 <One />
