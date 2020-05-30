@@ -18,6 +18,7 @@ import ParamsExample from "./component/Router/WithParams"
 import NestingParams from "./component/Router/NestPrams"
 import AuthExample from "./component/Router/AuthRouter"
 import MemoFunc from "./component/Antd/Memo"
+import PlayWithAntd from "./component/Antd/Play"
 
 const One = () => {
     const H = useHistory()
@@ -56,7 +57,8 @@ ReactDOM.render(
                 {/* <ParamsExample /> */}
                 {/* <NestingParams /> */}
                 {/* <AuthExample /> */}
-                <MemoFunc params={10} />
+                {/* <MemoFunc params={10} /> */}
+                <PlayWithAntd />
             </Route>
             <Route path="/con">
                 <One />
