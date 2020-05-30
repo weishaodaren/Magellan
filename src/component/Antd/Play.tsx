@@ -10,8 +10,9 @@ import {
     CheckCircleTwoTone,
 } from "@ant-design/icons"
 import Icon, { createFromIconfontCN } from "@ant-design/icons"
+import zh_CN from "antd/es/locale/zh_CN"
 import { MyIconFontList } from "./Play.icon"
-import { Typography } from "antd"
+import { Typography, ConfigProvider } from "antd"
 
 const IconFont = createFromIconfontCN({
     scriptUrl: "//at.alicdn.com/t/font_1382122_biln0ko87m7.js",
@@ -65,55 +66,72 @@ const PandaSvgIcon = (props: any) => <Icon component={PandaSvg} {...props} />
 const { Paragraph, Title } = Typography
 const PlayWithAntd: FC = (): JSX.Element => {
     return (
-        <div>
-            <h1>HAckIng</h1>
-            <HomeOutlined spin style={{ fontSize: "20px", color: "red" }} />
-            <SettingFilled spin style={{ fontSize: "30px", color: "pink" }} />
-            <SmileOutlined spin style={{ fontSize: "40px", color: "green" }} />
-            <SyncOutlined spin style={{ fontSize: "30px", color: "blue" }} />
-            <LoadingOutlined style={{ fontSize: "20px", color: "#9867ef" }} />
-            <SmileTwoTone style={{ fontSize: "60px" }} />
-            <HeartTwoTone
-                spin
-                twoToneColor={"#9867ef"}
-                style={{ fontSize: "40px" }}
-            />
-            <CheckCircleTwoTone
-                twoToneColor={"#52c41a"}
-                style={{ fontSize: "30px" }}
-            />
-            <span>
-                {MyIconFontList.map((item, index) => {
-                    return (
-                        <IconFont
-                            spin={item.spin}
-                            style={{ fontSize: "60px" }}
-                            type={item.type}
-                            key={index}
-                        />
-                    )
-                })}
-            </span>
-            <PandaSvgIcon spin style={{ fontSize: "90px" }} />
-            <br />
-            <Typography>
-                <Paragraph>
-                    <Title>This is Typography>Paragraph>Title</Title>
-                    <Paragraph editable>{"This is an editable text"}</Paragraph>
-                    <Paragraph copyable>{"This is a copyable text"}</Paragraph>
-                    <Paragraph copyable>{"Replace copy text."}</Paragraph>
-                </Paragraph>
-                <Paragraph>
-                    <Title ellipsis>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Saepe ratione dolorem rem, autem perspiciatis
-                        laboriosam, commodi natus nulla alias reprehenderit
-                        nostrum voluptas libero eum corporis deleniti quasi
-                        laborum a perferendis.
-                    </Title>
-                </Paragraph>
-            </Typography>
-        </div>
+        <ConfigProvider locale={zh_CN}>
+            <div>
+                <h1>HAckIng</h1>
+                <HomeOutlined spin style={{ fontSize: "20px", color: "red" }} />
+                <SettingFilled
+                    spin
+                    style={{ fontSize: "30px", color: "pink" }}
+                />
+                <SmileOutlined
+                    spin
+                    style={{ fontSize: "40px", color: "green" }}
+                />
+                <SyncOutlined
+                    spin
+                    style={{ fontSize: "30px", color: "blue" }}
+                />
+                <LoadingOutlined
+                    style={{ fontSize: "20px", color: "#9867ef" }}
+                />
+                <SmileTwoTone style={{ fontSize: "60px" }} />
+                <HeartTwoTone
+                    spin
+                    twoToneColor={"#9867ef"}
+                    style={{ fontSize: "40px" }}
+                />
+                <CheckCircleTwoTone
+                    twoToneColor={"#52c41a"}
+                    style={{ fontSize: "30px" }}
+                />
+                <span>
+                    {MyIconFontList.map((item, index) => {
+                        return (
+                            <IconFont
+                                spin={item.spin}
+                                style={{ fontSize: "60px" }}
+                                type={item.type}
+                                key={index}
+                            />
+                        )
+                    })}
+                </span>
+                <PandaSvgIcon spin style={{ fontSize: "90px" }} />
+                <br />
+                <Typography>
+                    <Paragraph>
+                        <Title>This is Typography>Paragraph>Title</Title>
+                        <Paragraph editable>
+                            {"This is an editable text"}
+                        </Paragraph>
+                        <Paragraph copyable>
+                            {"This is a copyable text"}
+                        </Paragraph>
+                        <Paragraph copyable>{"Replace copy text."}</Paragraph>
+                    </Paragraph>
+                    <Paragraph>
+                        <Title ellipsis>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Saepe ratione dolorem rem, autem perspiciatis
+                            laboriosam, commodi natus nulla alias reprehenderit
+                            nostrum voluptas libero eum corporis deleniti quasi
+                            laborum a perferendis.
+                        </Title>
+                    </Paragraph>
+                </Typography>
+            </div>
+        </ConfigProvider>
     )
 }
 
