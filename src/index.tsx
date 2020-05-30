@@ -53,12 +53,12 @@ ReactDOM.render(
                 }}
             >
                 {/* <App initalColor="#1896ff" /> */}
-                {/* <RouterFC /> */}
+                <RouterFC />
                 {/* <ParamsExample /> */}
                 {/* <NestingParams /> */}
                 {/* <AuthExample /> */}
                 {/* <MemoFunc params={10} /> */}
-                <PlayWithAntd />
+                {/* <PlayWithAntd /> */}
             </Route>
             <Route path="/con">
                 <One />

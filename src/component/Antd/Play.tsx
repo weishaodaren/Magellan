@@ -185,4 +185,5 @@ const PlayWithAntd: FC = (): JSX.Element => {
         </ConfigProvider>
     )
 }
+
 export default PlayWithAntd
