@@ -12,7 +12,7 @@ import {
 import Icon, { createFromIconfontCN } from "@ant-design/icons"
 import zh_CN from "antd/es/locale/zh_CN"
 import { MyIconFontList } from "./Play.icon"
-import { Typography, ConfigProvider } from "antd"
+import { Typography, ConfigProvider, Divider, Row, Col, Grid, Tag } from "antd"
 
 const IconFont = createFromIconfontCN({
     scriptUrl: "//at.alicdn.com/t/font_1382122_biln0ko87m7.js",
@@ -64,7 +64,9 @@ const PandaSvg = () => (
 const PandaSvgIcon = (props: any) => <Icon component={PandaSvg} {...props} />
 
 const { Paragraph, Title } = Typography
+const { useBreakpoint } = Grid
 const PlayWithAntd: FC = (): JSX.Element => {
+    const screens = useBreakpoint()
     return (
         <ConfigProvider locale={zh_CN}>
             <div>
@@ -130,9 +132,57 @@ const PlayWithAntd: FC = (): JSX.Element => {
                         </Title>
                     </Paragraph>
                 </Typography>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe laudantium facere repellat nemo velit maiores corporis
+                    corrupti, nesciunt voluptate totam eligendi ut consequuntur
+                    veritatis explicabo iure quod, nostrum sint quam.
+                </p>
+                <Divider>Lorem</Divider>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe laudantium facere repellat nemo velit maiores corporis
+                    corrupti, nesciunt voluptate totam eligendi ut consequuntur
+                    veritatis explicabo iure quod, nostrum sint quam.
+                </p>
+                <Divider plain orientation={"left"}>
+                    Lorem
+                </Divider>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe laudantium facere repellat nemo velit maiores corporis
+                    corrupti, nesciunt voluptate totam eligendi ut consequuntur
+                    veritatis explicabo iure quod, nostrum sint quam.
+                </p>
+                <Divider orientation={"right"} type={"vertical"}>
+                    Lorem
+                </Divider>
+                <Row>
+                    <Col span={18} push={6}>
+                        col-18 col-push-6
+                    </Col>
+                    <Col span={6} pull={18}>
+                        col-6 col-pull-18
+                    </Col>
+                </Row>
+                <>
+                    Current break point:
+                    {Object.entries(screens)
+                        .filter((screen) => !!screen[1])
+                        .map((screen) => (
+                            <Tag color={"pink"} key={screen[0]}>
+                                {screen[0]}
+                            </Tag>
+                        ))}
+                </>
             </div>
+            {React.createElement("div", null, "what")}
+            {React.createElement(
+                "h1",
+                { fontSize: "20px", color: "blue" },
+                "Hello"
+            )}
         </ConfigProvider>
     )
 }
-
 export default PlayWithAntd
