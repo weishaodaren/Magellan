@@ -21,8 +21,7 @@ import MemoFunc from "./component/Antd/Memo"
 import PlayWithAntd from "./component/Antd/Play"
 // import module from "./module-lib/index.js"
 import a from "./A"
-import globalLib from "./lib"
-a.call("xixixi")
+// a.call("xixixi")
 // 在index.tsx 调用 只用浏览器报错
 // globalLib('xxx')
 const One = () => {
@@ -56,13 +55,13 @@ ReactDOM.render(
                     return match.path === "/" && <div>Before</div>
                 }}
             >
-                {/* <App initalColor="#1896ff" /> */}
+                <App initalColor="#1896ff" />
                 {/* <RouterFC /> */}
                 {/* <ParamsExample /> */}
                 {/* <NestingParams /> */}
                 {/* <AuthExample /> */}
                 {/* <MemoFunc params={10} /> */}
-                <PlayWithAntd />
+                {/* <PlayWithAntd /> */}
             </Route>
             <Route path="/con">
                 <One />
