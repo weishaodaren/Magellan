@@ -19,7 +19,12 @@ import NestingParams from "./component/Router/NestPrams"
 import AuthExample from "./component/Router/AuthRouter"
 import MemoFunc from "./component/Antd/Memo"
 import PlayWithAntd from "./component/Antd/Play"
-
+// import module from "./module-lib/index.js"
+import a from "./A"
+import globalLib from "./lib"
+a.call("xixixi")
+// 在index.tsx 调用 只用浏览器报错
+// globalLib('xxx')
 const One = () => {
     const H = useHistory()
     const P = useParams()
@@ -48,17 +53,16 @@ ReactDOM.render(
             <Route
                 path="/"
                 render={({ match }) => {
-                    console.log(match)
-                    return <div>Before</div>
+                    return match.path === "/" && <div>Before</div>
                 }}
             >
                 {/* <App initalColor="#1896ff" /> */}
-                <RouterFC />
+                {/* <RouterFC /> */}
                 {/* <ParamsExample /> */}
                 {/* <NestingParams /> */}
                 {/* <AuthExample /> */}
                 {/* <MemoFunc params={10} /> */}
-                {/* <PlayWithAntd /> */}
+                <PlayWithAntd />
             </Route>
             <Route path="/con">
                 <One />
