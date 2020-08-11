@@ -1,9 +1,9 @@
 import React, { createContext } from 'react';
 // import StateFC from '../component/Hooks/useState'
 // import Reducer from '../component/Hooks/useReducer'
-// import Effect from '../component/Hooks/useEffect'
+import Effect from '../component/Hooks/useEffect'
 // import { Context as ContextSon } from '../component/Hooks/useContext'
-import RefFC from '../component/Hooks/useRef'
+// import RefFC from '../component/Hooks/useRef'
 
 const { Provider, Consumer } = createContext(99, ((prev, next) => prev + next))
 /*
@@ -21,19 +21,19 @@ export default function () {
                 {/* <StateFC /> */}
                 {/* <Reducer initalCount={0} /> */}
 
-                {/* <Consumer>
+                <Consumer>
                     {el => <Effect effectFromCousumer={el} />}
-                </Consumer> */}
+                </Consumer>
 
                 {/* <Context.Provider value={'red'}>
                     <ContextSon />
                 </Context.Provider> */}
 
-                <Bar />
-                <RefFC />
+                {/* <Bar /> */}
+                {/* <RefFC /> */}
             </>
         </Provider>
     )
 }
 
-const Bar = () => <Consumer>{el => <div>This is Bar component --{el}</div>}</Consumer>
+// const Bar = () => <Consumer>{el => <div>This is Bar component --{el}</div>}</Consumer>

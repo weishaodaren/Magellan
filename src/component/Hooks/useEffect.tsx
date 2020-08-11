@@ -18,12 +18,12 @@ import React, { useEffect, FC, useState } from 'react'
 const Effect: FC<{ effectFromCousumer: number }> = ({ effectFromCousumer }) => {
     const [state, setState] = useState(0)
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         setState(state + 1)
-    //     }, 1000)
-    //     return () => clearTimeout(timer)
-    // })
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setState(state + 1)
+        }, 1000)
+        return () => clearTimeout(timer)
+    }, [state])
 
     return (
         <div>

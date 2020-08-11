@@ -18,11 +18,11 @@ import React, { useState } from 'react'
 
 export default function () {
     const [count, setCount] = useState<number>(0)
-    // const [state, setState] = useState<{ [key: string]: string }>(() => { return { a: 'red', b: 'blue' } })
+    const [state, setState] = useState<{ [key: string]: string }>(() => { return { a: 'red', b: 'blue' } })
 
-    // React.useEffect(() => {
-    //     setState({ ...state, c: 'pink' })
-    // }, [])
+    React.useEffect(() => {
+        setState(() => return ({ ...state, c: 'pink' }))
+    }, [])
 
     return (
         <>
