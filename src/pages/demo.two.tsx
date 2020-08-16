@@ -1,11 +1,11 @@
 import React, { createContext } from 'react';
 // import StateFC from '../component/Hooks/useState'
 // import Reducer from '../component/Hooks/useReducer'
-import Effect from '../component/Hooks/useEffect'
+// import Effect from '../component/Hooks/useEffect'
 // import { Context as ContextSon } from '../component/Hooks/useContext'
 // import RefFC from '../component/Hooks/useRef'
-
-const { Provider, Consumer } = createContext(99, ((prev, next) => prev + next))
+import ClassCom from '../component/Class'
+const { Provider } = createContext(99, ((prev, next) => prev + next))
 /*
     创建一对{ Provider, Consumer }。
     当 React 渲染 context 组件 Consumer 时，它将从组件树的上层中最接近的匹配的 Provider 读取当前的 context 值。
@@ -18,12 +18,13 @@ export default function () {
     return (
         <Provider value={89}>
             <>
+                <ClassCom name='jiajia' age={26} />
                 {/* <StateFC /> */}
                 {/* <Reducer initalCount={0} /> */}
 
-                <Consumer>
+                {/* <Consumer>
                     {el => <Effect effectFromCousumer={el} />}
-                </Consumer>
+                </Consumer> */}
 
                 {/* <Context.Provider value={'red'}>
                     <ContextSon />
